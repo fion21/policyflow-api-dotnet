@@ -4,10 +4,7 @@ PolicyFlow API
 A C# ASP.NET Core Web API designed to simulate a real-world insurance policy workflow system.
 
 This project goes beyond basic CRUD by modelling workflow-driven processing, validation, audit tracking, and operational metrics. It reflects how backend systems support high-volume environments where data accuracy, traceability, and efficiency are critical.
-
----
-
-What this demonstrates  
+ 
 ----------------------
 
 - Designing APIs around real business workflows  
@@ -62,3 +59,99 @@ Getting Started
 Follow these steps to run the project locally.
 
 Clone the repository
+
+
+```git clone https://github.com/YOUR-USERNAME/PolicyFlowApi.git```
+
+cd PolicyFlowApi
+
+
+Install dependencies
+
+
+```dotnet restore```
+
+
+Run the application
+
+
+```dotnet run```
+
+
+Open Swagger in your browser
+
+
+http://localhost:5244/swagger
+
+
+If a different port appears in the terminal, use that instead.
+
+---
+
+Example Usage  
+-------------
+
+Create a policy
+
+
+{
+"policyNumber": "POL-3001",
+"customerName": "Amina Patel",
+"policyType": "Health Standard",
+"premium": 275
+}
+
+
+Update policy status
+
+
+{
+"newStatus": "Submitted",
+"changedBy": "Fiona"
+}
+
+
+---
+
+Available Endpoints  
+-------------------
+
+- GET /api/Policies  
+- GET /api/Policies/{id}  
+- POST /api/Policies  
+- PUT /api/Policies/{id}/status  
+- GET /api/Metrics  
+- GET /api/policies/{policyId}/history  
+
+---
+
+Notes  
+-----
+
+- The application uses an in-memory database so data resets on restart  
+- Swagger is used to test all endpoints  
+- No external database setup is required  
+
+---
+
+Why this project  
+----------------
+
+This project was built to reflect the type of backend systems used in workflow-heavy environments such as insurance and operations platforms.
+
+It focuses on more than just data storage by incorporating:
+
+- controlled state transitions  
+- audit history tracking  
+- validation and error handling  
+- performance metrics  
+
+These are key elements of production-grade backend systems.
+
+---
+
+Author  
+------
+
+Fiona L
+Software Developer focused on backend systems, workflow design, and scalable application architecture.
